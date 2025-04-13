@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>YouTube Viewer</title>
+</head>
+<body>
+  <h2>Enter YouTube Video ID (e.g. dQw4w9WgXcQ):</h2>
+  <input type="text" id="videoId" placeholder="Video ID">
+  <button onclick="play()">Play Video</button>
+
+  <div id="player" style="margin-top:20px;"></div>
+
+  <script>
+    function play() {
+      const id = document.getElementById("videoId").value.trim();
+      const embed = `https://www.youtube-nocookie.com/embed/${id}`;
+      document.getElementById("player").innerHTML = `
+        <iframe width="560" height="315"
+          src="${embed}"
+          frameborder="0"
+          allow="autoplay; encrypted-media"
+          allowfullscreen>
+        </iframe>`;
+    }
+  </script>
+</body>
+</html>
